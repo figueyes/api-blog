@@ -1,7 +1,6 @@
 import httpStatus from "http-status";
 import {Request, Response} from "express";
 import {IController} from "../shared/infrastructure/controller/IController";
-// @ts-ignore
 import * as packageJSON from "../../package.json";
 
 export class VersionHealth implements IController {
