@@ -9,13 +9,10 @@ export class FindArticlesController implements IController {
     constructor(findArticlesUseCase: IFindArticlesUseCase) {
         this.findArticlesUseCase = findArticlesUseCase;
     }
-    run = async (req: Request, res:Response): Promise<void> => {
-        const {tags} = req.query;
-        const criteria = { "tags": {
-            "$in": tags
-        } }
+
+    run = async (req: Request, res: Response): Promise<void> => {
         try {
-            const articles = await this.findArticlesUseCase.find(criteria);
+            const articles = await this.findArticlesUseCase.find();
             res.status(httpStatus.OK).send(articles);
         } catch (e) {
             res.status(httpStatus.BAD_REQUEST).json(e);

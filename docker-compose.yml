@@ -1,0 +1,16 @@
+version: '3'
+services:
+  node:
+    env_file:
+      - .env
+    build:
+      context: ./
+    image: nodejs-12:12.13.0-alpine
+    working_dir: /app
+    command: yarn run start
+    restart: always
+    volumes:
+      - ./:/app
+    ports:
+      - "3108:3000"
+
