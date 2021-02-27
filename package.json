@@ -7,6 +7,7 @@
   "scripts": {
     "watch": "tsc -w",
     "start": "node dist/src/index.js",
+    "start:dev:full": "\"yarn run start:dev\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alex Kings",
