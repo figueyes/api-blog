@@ -21,9 +21,9 @@ class App {
     }
 
     private config(): void {
-        this.server.use(bodyParser.json());
         this.server.use(cors())
-        this.server.use(this.BASE_PATH, this.routes.go());
+        this.server.use(bodyParser.json());
+        this.server.use(this.BASE_PATH, this.routes.run());
         this.database.connection();
     }
 }

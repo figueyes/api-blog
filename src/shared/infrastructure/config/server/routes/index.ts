@@ -46,7 +46,7 @@ export class Routes {
         this.updateArticleController = new UpdateArticleController(this.updateArticleUseCase);
     }
 
-    public go(): Router {
+    public run(): Router {
         this.router.get( "/version", this.versionHealth.run);
         this.router.get( "/articles", this.findArticlesController.run);
         this.router.get( "/articles/:id", this.findArticleController.run);
